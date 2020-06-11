@@ -1,0 +1,92 @@
+$yellow: #fac545;
+
+html 
+  font-size: 62.5%;
+  box-sizing: border-box;
+  *, *:before, *:after 
+    box-sizing: inherit;
+
+body
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  h1
+    font-weight: 500;
+  h3 
+    font-weight: 400;
+  img 
+    max-width: 100%;
+  a
+    text-decoration: none;
+    color: black;
+
+.wrapper
+  display: flex;
+  height: 100vh;
+  
+.asideWrapper
+  display: flex;
+  align-items: center;
+  width: 45%;
+  background-image: url('/static/img/imagebkg.png');
+  background-size: cover;
+  img
+    width: 100%;
+  @media (max-width: 768px)
+    display: none;
+  
+.mainWrapper
+  display: flex;
+  width: 55%;
+  margin-left: 12rem;
+  padding: 6rem 0;
+  @media (max-width: 768px)
+    margin: 0 auto;
+    justify-content: center;
+    width: 70%;
+
+.loginWrapper
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  img
+    width: 50%;
+  & div:nth-child(2)
+    margin-bottom: 1rem;
+  h1
+    margin-bottom: 1rem;
+  h3 
+    opacity: 0.5;
+    margin-top: 0;
+  form div
+    margin-bottom: 2.5rem;
+    input
+      display: block;
+      padding: 1.8rem 1rem;
+      width: 100%;
+      border: 1px solid rgba(0,0,0,0.3);
+      border-radius: 0.4rem;
+      background: url('/static/img/ic_contrase§a.png') no-repeat 95%;
+      background-size: 2.5rem;
+      &:first-child
+        background-image: url('/static/img/ic_usuario.png');
+        margin-bottom: 1rem;
+      &::placeholder
+        font-size: 1.3rem;
+  a
+    font-size: 1.5rem;
+    font-weight: bold;
+  button
+    background-color: $yellow;
+    border: unset;
+    padding: 1.4rem;
+    margin-top: 3.5rem;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+    &:hover
+      cursor: pointer;
+  
+    
