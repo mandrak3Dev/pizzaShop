@@ -19,6 +19,9 @@ body
   a
     text-decoration: none;
     color: black;
+  ul 
+    list-style: none;
+    display: flex;
 
 .wrapper
   display: flex;
@@ -27,7 +30,7 @@ body
 .asideWrapper
   display: flex;
   align-items: center;
-  width: 45%;
+  width: 40%;
   background-image: url('/static/img/imagebkg.png');
   background-size: cover;
   img
@@ -36,31 +39,33 @@ body
     display: none;
   
 .mainWrapper
+  width: 60%;
   display: flex;
-  width: 55%;
-  margin-left: 12rem;
-  padding: 6rem 0;
   @media (max-width: 768px)
     margin: 0 auto;
-    justify-content: center;
-    width: 70%;
+    width: 100%;
 
 .loginWrapper
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  padding: 6rem 0;
+  margin: 0 6rem 0 12rem;
+  @media (max-width: 768px)
+    margin: 0 auto;
+    padding: 6rem 2rem;
   img
     width: 50%;
   & div:nth-child(2)
-    margin-bottom: 1rem;
+    margin: 1rem 0;
   h1
     margin-bottom: 1rem;
   h3 
     opacity: 0.5;
     margin-top: 0;
   form div
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     input
       display: block;
       padding: 1.8rem 1rem;
@@ -88,5 +93,47 @@ body
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
     &:hover
       cursor: pointer;
-  
-    
+
+.containerWrapper
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+
+header
+  padding: 1.8rem 12rem 1rem 6rem;
+  div
+    a
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    img
+      width: 1.8rem;
+      margin-right: .3rem;
+    span
+      font-size: 1.2rem;
+      opacity: 0.5;
+  nav
+    ul
+      padding: 0;
+      li
+        font-size: 1.4rem;
+        span
+          padding: 0 .8rem;
+          opacity: 0.5;
+        a.active
+          border-bottom: 2px solid $yellow;
+
+footer
+  display: flex;
+  justify-content: space-between;
+  background-color: #242424;   
+  width: 100%;
+  padding: 1.2rem 12rem 1rem 6rem;
+  i 
+    color: white;  
+    font-size: 2.5rem;
+    &:first-child
+      margin-right: 1rem; 
+  img
+    width: 50px;
