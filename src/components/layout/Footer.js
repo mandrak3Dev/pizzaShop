@@ -5,16 +5,18 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div>
-        <Link to={'/'}>
-          <i class="fab fa-facebook-square"></i>
-        </Link>
-        <Link to={'/'}>
-          <i class="fab fa-instagram"></i>
-        </Link>
+        <a href="http://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-facebook-square"></i>
+        </a>
+        <a href="http://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-instagram"></i>
+        </a>
       </div>
-      <div>
-        <img src="/static/img/Best Pizza.png" alt="" />
-      </div>
+      <Link to={"/"}>
+        <div>
+          <img src="/static/img/Best Pizza.png" alt="" />
+        </div>
+      </Link>
     </footer>
   );
 };

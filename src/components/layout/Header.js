@@ -2,10 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+  }
+
   return (
     <header>
       <div>
-        <Link to={"/"} className="active">
+        <Link to={"/"} className="active" onClick={handleLogout}>
           <img src="/static/img/ic_contrase§a.png" alt="" />
           <span>Salir</span>
         </Link>
