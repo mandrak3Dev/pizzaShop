@@ -148,13 +148,11 @@ body
     width: 100%;
   @media (max-width: 375px)
     grid-template-columns: repeat(2, 1fr);
-  div
-    margin-right: 1.2rem;
+  .store
+    margin-right: 2rem;
     &:hover
       cursor: pointer;
-    img
-      width: 90%;
-    div
+    & > div:not(:first-child)
       margin: 1rem 0 2rem;
       p
         font-size: 1.25rem;
@@ -163,6 +161,13 @@ body
       small
         font-size: 1rem;
         opacity: 0.7;
+    .carousel-root
+      margin-left: -1rem;
+    .carousel
+      .slide
+        background: none;
+        img
+          width: 90%;
 
 .modal
   position: fixed;

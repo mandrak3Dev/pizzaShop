@@ -15,7 +15,7 @@ const Modal = (props) => {
                   <h3>{data.name}</h3>
                   <span>{data.address}</span>
                 </div>
-                <img src={data.img} alt="Logo de la pizzería" />
+                <img src={data.img[0]} alt="Logo de la pizzería" />
               </div>
               <div>
                 <p>{data.description}</p>

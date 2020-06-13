@@ -4,6 +4,7 @@ import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Modal from "./layout/Modal";
 import axios from "axios";
+import Slideshow from "./layout/SlideShow";
 
 const Stores = (props) => {
   const [stores, setStores] = useState([]);
@@ -34,11 +35,11 @@ const Stores = (props) => {
     const request = await axios(url);
     const data = request.data.response.stores;
     const pictures = [
-      "/static/img/Panos_pizza.png",
-      "/static/img/Sbarro.png",
-      "/static/img/pizzeria_camion.png",
-      "/static/img/voglia_di_pizza.png",
-      "/static/img/stroller_pizza.png",
+      ["/static/img/Panos_pizza.png", "/static/img/panos_pizza_1.png"],
+      ["/static/img/Sbarro.png", "/static/img/sbarro_pizza.png"],
+      ["/static/img/pizzeria_camion.png", "/static/img/pizzeria_camion_pizza.png"],
+      ["/static/img/voglia_di_pizza.png", "/static/img/vogliadipizza_pizza.png"],
+      ["/static/img/stroller_pizza.png", "/static/img/stroller_pizza_1.png"]
     ];
     const stores = data.map((item, index) =>
       Object.assign(item, { img: pictures[index] })
@@ -93,8 +94,8 @@ const Stores = (props) => {
             </div>
             <div className="gridWrapper">
               {searchResults.map((store) => (
-                <div key={store.id} onClick={() => loadStore(store)}>
-                  <img src={store.img} alt="Imágen de tienda" />
+                <div className="store" key={store.id} onClick={() => loadStore(store)}>
+                  <Slideshow img1={store.img[0]} img2={store.img[1]} />
                   <div>
                     <p>{store.name}</p>
                     <small>{store.address}</small>
