@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import Aside from "./layout/Aside";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
+import Modal from "./layout/Modal";
 import axios from "axios";
 
 const Stores = (props) => {
   const [stores, setStores] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [modalShow, setModalShow] = useState(false);
+  const [modalData, setModalData] = useState([]);
 
   useEffect(() => {
     if (!localStorage.getItem("user")) {
@@ -45,8 +48,22 @@ const Stores = (props) => {
   };
 
   const loadStore = (store) => {
-    console.log(store);
+    setModalShow(true);
+    setModalData(store);
   };
+
+  const closeModal = () => {
+    setModalShow(false);
+    setModalData([]);
+  };
+
+  window.onclick = (e) => {
+    const modal = document.querySelector('.modal');
+    if (e.target === modal) {
+      setModalShow(false);
+      setModalData([]);
+    }
+  } 
 
   const handleChangeSearch = (e) => {
     setSearchValue(e.target.value);
@@ -85,6 +102,7 @@ const Stores = (props) => {
                 </div>
               ))}
             </div>
+            <Modal state={modalShow} data={modalData} onClose={closeModal}/>
           </div>
           <Footer />
         </div>
